@@ -142,7 +142,7 @@ export default function savings(element, allUnformattedData) {
       .attr('fill', ({data: {color}}) => color)
       .attr('stroke', '#151515')
       .style('stroke-width', '2px')
-      .on('mouseover', function(_, {data}) {
+      .on('pointerenter', function(_, {data}) {
         slidePieSliceOut.apply(this, arguments);
         renderLabel(label, data);
       });

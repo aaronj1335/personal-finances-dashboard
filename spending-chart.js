@@ -85,7 +85,7 @@ export default function spending(element, unformattedData, description) {
     .attr('stroke', '#151515')
     .style('stroke-width', '2px')
     .style('display', d => d.data.visible? 'initial' : 'none')
-    .on('mouseenter', function(_, {data}) {
+    .on('pointerenter', function(_, {data}) {
       slidePieSliceOut.apply(this, arguments);
       renderLabel(label, description, data);
     });
@@ -101,7 +101,7 @@ export default function spending(element, unformattedData, description) {
     .attr('fill', ({data: {color}}) => color)
     .attr('stroke', '#151515')
     .style('stroke-width', '2px')
-    .on('mouseenter', function(_, {data}) {
+    .on('pointerenter', function(_, {data}) {
       slidePieSliceOut.apply(this, arguments);
       renderLabel(label, description, data);
     });
