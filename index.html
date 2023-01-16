@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang=en>
+<head>
+
+  <style>* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #151515;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 2rem;
+}
+
+a,
+a:visited {
+  color: #3794ff
+}
+
+section {
+  margin-bottom: 7rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+td {
+  padding: 0 0 1rem 0;
+}
+
+td:last-child {
+  width: 50%;
+  text-align: right;
+}
+
+td:first-child {
+  width: 50%;
+  text-align: right;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+button {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.317rem;
+  background-color: #aaa;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+section>div,
+.flex>div {
+  flex: 1;
+}
+
+.big {
+  font-size: 5rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.ease-in-out {
+  transition: 200ms ease-in-out;
+}
+
+.color-block {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: -2px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+#historical-spending .marker {
+  display: none;
+}
+
+#networth-stacked .series {
+  opacity: 0.8;
+}
+
+#networth-stacked .series:hover {
+  opacity: 1;
+  stroke-width: 1px;
+  stroke: white;
+}</style>
+
+  <meta charset=utf-8>
+  <title>Monthly finances</title>
+</head>
+
+<body>
+
+  <h1>Monthly report for October 2022</h1>
+
+  <section class=flex>
+    <div class="flex center" style="flex-direction: column">
+      <div class=flex style="align-items:center; height: 12rem">
+        <div>
+          <div class=big>$10,149</div>
+          <em>Income last month</em>
+        </div>
+
+        <div>
+          <div class=big>87.4%</div>
+          <em>Saved of yearly goal</em>
+        </div>
+      </div>
+
+      <div class=flex style="align-items:center">
+        <div>
+          <div class=big>$3,883</div>
+          <em>Discretionary spending last month <br/>
+          $6,696 total</em>
+        </div>
+
+        <div class=flex style="align-items: center; text-align: right">
+          <h2 style="flex: 0.9; font-size: 2rem">
+            Giving
+          </h2>
+
+          <ul style="flex: 1;
+                     display: inline-block;
+                     text-align: left;
+                     font-size: 1.2rem;
+                     list-style: none;
+                     padding: 1rem;
+                     border-left: 1px solid gray;
+                     line-height: 2rem">
+            <li>
+              <a style="width: 7.4rem; text-align: right; display: inline-block" href="https://fosterangelsctx.org">Foster Angels</a>
+              $417
+            </li>
+
+            <li>
+              <a style="width: 7.4rem; text-align: right; display: inline-block" href="https://www.williamsoncountycasa.org">CASA WilCo</a>
+              $287
+            </li>
+
+            <li>
+              <a style="width: 7.4rem; text-align: right; display: inline-block" href="http://www.catholiccharitiesrgv.org">CCRGV</a>
+              $309
+            </li>
+          <ul>
+        </div>
+      </div>
+    </div>
+
+    <div id=savings class=flex style="height: 30rem"></div>
+  </section>
+
+  <section class=flex>
+    <div class=flex>
+      <div id=spending               class=flex style="height: 40rem; justify-content: center"></div>
+      <div id=discretionary-spending class=flex style="height: 40rem; justify-content: center"></div>
+    </div>
+  </section>
+
+  <h1>Historical data</h1>
+
+  <section id=historical-spending class=flex>
+    <svg style="height: 40rem; width: 100%"></svg>
+    <div class=label style="min-width: 30rem"></div>
+  </section>
+
+  <section id=networth class=flex>
+    <div class=label style="min-width: 30rem"></div>
+    <svg style="height: 40rem; width: 100%"></svg>
+  </section>
+
+  <section id=yearly class=flex>
+    <svg style="height: 40rem; width: 100%"></svg>
+    <div class=label style="min-width: 30rem"></div>
+  </section>
+
+  <section id=yearly-normalized class=flex>
+    <div class=label style="min-width: 30rem"></div>
+    <svg style="height: 40rem; width: 100%"></svg>
+  </section>
+
+  <section id=networth-stacked>
+    <h2>Net worth by asset</h2>
+    <svg style="height: 60rem; width: 100%"></svg>
+    <div class=label></div>
+  </section>
+
+  <script src=/d3-7.6.1.js></script>
+
+  <script type=module src=/data.js></script>
+
+  <script type=module src=/index.js></script>
+
+</body>
+</html>
