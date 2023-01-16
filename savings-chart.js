@@ -1,4 +1,4 @@
-import {colorScale, entries, grayScale, keys, last, slidePieSliceOut, values} from '/util.js';
+import {colorScale, entries, grayScale, keys, last, slidePieSliceOut, values} from './util.js';
 
 function renderLabel(element, {category, value, saved, goal, toGo}={}) {
   element.lastElementChild.innerHTML = category == null?

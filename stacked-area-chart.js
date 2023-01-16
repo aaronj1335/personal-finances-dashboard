@@ -1,4 +1,4 @@
-import {EXTENT_PADDING, keys, paddedExtent} from '/util.js';
+import {EXTENT_PADDING, keys, paddedExtent} from './util.js';
 
 export default function stackedAreaChart(element, data, renderLabel, config) {
   const height = element.clientHeight;

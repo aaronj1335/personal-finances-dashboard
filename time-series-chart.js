@@ -1,4 +1,4 @@
-import {entries, keys, paddedExtent, values} from '/util.js';
+import {entries, keys, paddedExtent, values} from './util.js';
 
 export default function timeSeriesChart(element, data, renderLabel, config) {
   const height = element.clientHeight;

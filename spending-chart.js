@@ -1,4 +1,4 @@
-import {colorScale, entries, slidePieSliceOut} from '/util.js';
+import {colorScale, entries, slidePieSliceOut} from './util.js';
 
 function renderLabel(element, description, {category, value}={}) {
   element.innerHTML = category == null?

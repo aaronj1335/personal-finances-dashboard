@@ -1,9 +1,9 @@
-import {data} from '/data.js';
-import savingsChart from '/savings-chart.js';
-import spendingChart from '/spending-chart.js';
+import {data} from './data.js';
+import savingsChart from './savings-chart.js';
+import spendingChart from './spending-chart.js';
 import stackedAreaChart from './stacked-area-chart.js';
 import timeSeriesChart from './time-series-chart.js';
-import {colorScale, entries, keys, sum, values} from '/util.js';
+import {colorScale, entries, keys, sum, values} from './util.js';
 
 function curveCatmullRom(line) {
   return line.curve(d3.curveCatmullRom);
