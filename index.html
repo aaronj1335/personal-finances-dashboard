@@ -2,7 +2,12 @@
 <html lang=en>
 <head>
 
-  <style>* {
+  <style>
+body {
+  margin: 0;
+}
+
+* {
   box-sizing: border-box;
 }
 
@@ -119,13 +124,33 @@ section>div,
   opacity: 1;
   stroke-width: 1px;
   stroke: white;
-}</style>
+}
+</style>
 
   <meta charset=utf-8>
   <title>Monthly finances</title>
 </head>
 
 <body>
+
+  <div id=alert
+       style="background-color: #a49d78;
+              color: black;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              padding: 0.5rem 2rem;
+              font-size: 1.5rem;
+              ">
+    This was made with sample data.
+    Check out <a style="color: #33486e" href="/writings/personal-finances-dashboard">the post</a> which explains more.
+    <button style="float: right;
+                   color: black;
+                   background-color: transparent;
+                   padding: 0"
+            onclick="document.getElementById('alert').remove()">X</button>
+  </div>
 
   <h1>Monthly report for October 2022</h1>
 
